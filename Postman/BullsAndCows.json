@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "5a03104a-5342-4832-b356-b4b522209dc2",
+		"name": "Efrat Amar, Hadas Margolin and Rachel Fried",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39477845"
+	},
+	"item": [
+		{
+			"name": "1. Add Player 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rachel Fried\",\r\n  \"password\": \"secret123\",\r\n  \"mail\": \"rachel@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Add Player 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Sara Cohen\",\r\n  \"password\": \"pass456\",\r\n  \"mail\": \"sara@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Add Duplicate Player (should fail)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rachel Fried\",\r\n  \"password\": \"anotherpass\",\r\n  \"mail\": \"rachel@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Edit Player 1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rachel F.\",\r\n  \"mail\": \"rachel.fried@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/684ebdf8366a262bdd63678e/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"684ebdf8366a262bdd63678e",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Edit Nonexistent Player (should fail)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Nobody\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/000000000000000000000000/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"000000000000000000000000",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get Player 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/684ebdf8366a262bdd63678e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"684ebdf8366a262bdd63678e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Start a New Game (Player 1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rachel F.\",\r\n  \"password\": \"secret123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Start a New Game (Player 2)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Sara Cohen\",\r\n  \"password\": \"pass456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Start Game with Wrong Credentials (should fail)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Rachel F.\",\r\n  \"password\": \"132544\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Player 1 Makes a Valid Guess",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"guess\": [1,2,3,4]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/684ec35caf0ee67f75d641a1/guess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"684ec35caf0ee67f75d641a1",
+						"guess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Player 1 Makes an Invalid Guess (should fail)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"guess\": [\"a\",\"b\",\"c\",\"d\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/684ec35caf0ee67f75d641a1/guess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"684ec35caf0ee67f75d641a1",
+						"guess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Player 2 Makes a Valid Guess",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"guess\": [5,6,7,8]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/684ec427af0ee67f75d641a8/guess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"684ec427af0ee67f75d641a8",
+						"guess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14. Get Player 1's Game Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/game/684ec35caf0ee67f75d641a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"game",
+						"684ec35caf0ee67f75d641a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15. Get Player 2's Game Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/game/684ec427af0ee67f75d641a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"game",
+						"684ec427af0ee67f75d641a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16. End Player 1's Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/684ec35caf0ee67f75d641a1/end",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"684ec35caf0ee67f75d641a1",
+						"end"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17. End Player 2's Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000 /api/game/684ec427af0ee67f75d641a8/end",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000 ",
+					"path": [
+						"api",
+						"game",
+						"684ec427af0ee67f75d641a8",
+						"end"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18. Get Player 1's Results",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/684ebdf8366a262bdd63678e/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"684ebdf8366a262bdd63678e",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19. Get Player 2's Results",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/684ebecd366a262bdd636791/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"684ebecd366a262bdd636791",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20. Get Leaderboard (No results because no one won)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/leaderboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"leaderboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21. Delete Player 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/684ebdf8366a262bdd63678e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"684ebdf8366a262bdd63678e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22. Delete Nonexistent Player (should fail)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/player/000000000000000000000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"player",
+						"000000000000000000000000"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
